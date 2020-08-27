@@ -19,54 +19,48 @@
 
           <form id='supForm'>
             <label for='supEmail'>Email</label>
-            <input id='supEmail' type='email' placeholder='abc@gmail.com' name="credentials[email]">
-
+              <input id='supEmail' type='email' placeholder='abc@gmail.com' name="credentials[email]">
             <label for='supPassword'>Password</label>
-            <input id='supPassword' type='password' placeholder='********' name="credentials[password]">
-
+              <input id='supPassword' type='password' placeholder='********' name="credentials[password]">
             <label for='supConfirm'>Confirm Password</label>
-            <input id='supConfirm' type='password' placeholder='********' name="credentials[password_confirmation]">
-
+              <input id='supConfirm' type='password' placeholder='********' name="credentials[password_confirmation]">
             <input type="submit" value='Sign Up'>
           </form>
 
           <form id='sinForm'>
             <label for='sinEmail'>Email</label>
-            <input name="credentials[email]" type='email' id = 'sinEmail' placeholder='abc@gmail.com'>
-
+              <input name="credentials[email]" type='email' id = 'sinEmail' placeholder='abc@gmail.com'>
             <label for='sinPwd'>Password</label>
-            <input name="credentials[password]" type='password' id = 'sinPwd' placeholder='********'>
-
-            <input type="submit" value='Sign In'>
+              <input name="credentials[password]" type='password' id = 'sinPwd' placeholder='********'>
+              <input type="submit" value='Sign In'>
           </form>
 
           <form id='cpForm'>
             <label for='oldpwd'>Old Password</label>
-            <input name="passwords[old]" type='password' id = 'oldpwd' placeholder='********'>
-
+              <input name="passwords[old]" type='password' id = 'oldpwd' placeholder='********'>
             <label for='newpwd'>New Password</label>
-            <input name="passwords[new]" type='password' id = 'newpwd' placeholder='********'>
-
-            <input type="submit" value='Change Passwords'>
+              <input name="passwords[new]" type='password' id = 'newpwd' placeholder='********'>
+              <input type="submit" value='Change Passwords'>
           </form>
 
           <button id='sout'>Sign Out</button>
 
-      </section>
+    </section>
 
+    <main>
+        <button class='startGame'>Start Game</button>
+        <div class='gamebox'>
+        <div class='gameboard' id='0' data-num='0'> 1</div>
+        <div class='gameboard' id='1' data-num='1'> 2</div>
+        <div class='gameboard' id='2' data-num='2'>3 </div>
+        <div class='gameboard' id='3' data-num='3'>4 </div>
+        <div class='gameboard' id='4' data-num='4'>5 </div>
+        <div class='gameboard' id='5' data-num='5'> 6</div>
+        <div class='gameboard' id='6' data-num='6'> 7</div>
+        <div class='gameboard' id='7' data-num='7'>8 </div>
+        <div class='gameboard' id='8' data-num='8'>9 </div>
+      </div>
+    </main>
 
-      <!-- <main>
-      <div class='gameBox'>
-      <div class='gameBoard' id='0' data-num='0'> 1</div>
-      <div class='gameBoard' id='1' data-num='1'> 2</div>
-      <div class='gameBoard' id='2' data-num='2'>3 </div>
-      <div class='gameBoard' id='3' data-num='3'>4 </div>
-      <div class='gameBoard' id='4' data-num='4'>5 </div>
-      <div class='gameBoard' id='5' data-num='5'> 6</div>
-      <div class='gameBoard' id='6' data-num='6'> 7</div>
-      <div class='gameBoard' id='7' data-num='7'>8 </div>
-      <div class='gameBoard' id='8' data-num='8'>9 </div>
-    </div>
-    </main> -->
   </body>
 </html>

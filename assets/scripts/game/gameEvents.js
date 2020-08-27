@@ -1,24 +1,14 @@
-const checkifClicked = function(get){
-  //if yes return error
-  // else call attempt
+'use strict'
+
+const gameApi = require('./game/gameApi')
+const gameUi = require('./game/gameUi')
+
+const startGame = function () {
+  gameApi.newGame()
+    .then(gameUi.startSuccess)
+    .catch(gameUi.startFail)
 }
 
-const playerTurn = function(get) {
-  let num = get.join('').length
-  let sign ='X'
-  if(num % 2 !== 0) {
-    sign = 'O'
-  }
-  return sign
-}
-
-const attempt = function(event) {
-  event.preventDefault()
-  let get = ['','','','','','','','',''] //get function here--api.js
-
-  let index = $(this).data('num')
-
-  // let sign = sign() //X or O
-  get[index] = playerTurn(get)
-  //update PATCH function here--api.js
+module.exports = {
+  startGame
 }
