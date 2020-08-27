@@ -1,1 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
+
+.gameBoard{
+  height: 100px;
+  width: 100px;
+  border: 3px solid blue;
+}
+
+.gameBox{
+  display: flex;
+  flex-wrap: wrap;
+  height: 306px;
+  width:306px;
+  border: 3px solid black;
+}
