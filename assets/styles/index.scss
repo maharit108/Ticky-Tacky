@@ -1,16 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
 
-$bordercolor: solid #0000ff;
 
 .gameboard {
-  border: 3px bordercolor;
+  border: 3px solid black;
   height: 100px;
   width: 100px;
 
 }
 
 .gamebox {
-  border: 3px bordercolor;
+  border: 3px solid black;
   display: flex;
   flex-wrap: wrap;
   height: 306px;
