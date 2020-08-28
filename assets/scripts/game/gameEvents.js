@@ -1,7 +1,7 @@
 'use strict'
 
-const gameApi = require('./game/gameApi')
-const gameUi = require('./game/gameUi')
+const gameApi = require('./gameApi')
+const gameUi = require('./gameUi')
 
 const startGame = function () {
   gameApi.newGame()
