@@ -1,38 +1,51 @@
 'use strict'
 
+const store = require('./../store.js')
+const brain = require('./gameBrains.js')
+
 const startSuccess = function (response) {
-  console.log('Yessss', response)
+  store.gameOn = response.game
+  $('.gameboard').text('')
+  store.sign = 'X'
+  store.winCond = ''
 }
 
 const startFail = function (response) {
   console.log('Nooo', response)
 }
 
-// const checkifClicked = function(get){
-//   //if yes return error
-//   // else call attempt
-// }
-//
-// const playerTurn = function(get) {
-//   let num = get.join('').length
-//   let sign ='X'
-//   if(num % 2 !== 0) {
-//     sign = 'O'
-//   }
-//   return sign
-// }
-//
-// const attempt = function(event) {
-//   event.preventDefault()
-//   let get = ['','','','','','','','',''] //get function here--api.js
-//
-//   let index = $(this).data('num')
-//
-//   // let sign = sign() //X or O
-//   get[index] = playerTurn(get)
-//   //update PATCH function here--api.js
-// }
+const deleteGameFail = function (response) {
+  console.log('Nooo', response)
+}
+
+const deleteGameSuccess = function (response) {
+  $('.history').text(`${store.games[0]._id} is deleted`)
+  store.games.shift()
+}
+
+const showallSuccess = function (response) {
+  store.games = response.games
+  $('.history').text('')
+  let displaymsg = ''
+  if (store.games.length !== 0) {
+    for (let i = 0; i < store.games.length; i++) {
+      displaymsg += '\n' + store.games[i]._id + '\n'
+    }
+    $('.history').text(displaymsg)
+  }
+}
+
+const showallFail = function (response) {
+  console.log('Fail', response)
+}
+
+const upSuccess = function (response) {
+  store.gameOn = response.game
+  console.log(store.gameOn.cells)
+  brain.win()
+}
+
 
 module.exports = {
-  startFail, startSuccess
+  startFail, startSuccess, showallSuccess, showallFail, deleteGameFail, deleteGameSuccess, upSuccess
 }

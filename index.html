@@ -13,17 +13,18 @@
     </head>
 
     <body>
-      <h1>O-X-O</h1>
-      <section class ='auth'>
+      <section class = 'container'>
+        <div class = 'row h-100 top'>
+          <h1>O-X-O</h1>
           <span class='authMsg'></span>
 
           <form id='supForm'>
             <label for='supEmail'>Email</label>
-              <input id='supEmail' type='email' placeholder='abc@gmail.com' name="credentials[email]">
+              <input name="credentials[email]" type='email' id='supEmail' placeholder='abc@gmail.com' >
             <label for='supPassword'>Password</label>
-              <input id='supPassword' type='password' placeholder='********' name="credentials[password]">
+              <input name="credentials[password]" type='password' id='supPassword'  placeholder='********' >
             <label for='supConfirm'>Confirm Password</label>
-              <input id='supConfirm' type='password' placeholder='********' name="credentials[password_confirmation]">
+              <input name="credentials[password_confirmation]" type='password' id='supConfirm'  placeholder='********' >
             <input type="submit" value='Sign Up'>
           </form>
 
@@ -32,7 +33,7 @@
               <input name="credentials[email]" type='email' id = 'sinEmail' placeholder='abc@gmail.com'>
             <label for='sinPwd'>Password</label>
               <input name="credentials[password]" type='password' id = 'sinPwd' placeholder='********'>
-              <input type="submit" value='Sign In'>
+              <input type="submit" value='Log In'>
           </form>
 
           <form id='cpForm'>
@@ -45,22 +46,35 @@
 
           <button id='sout'>Sign Out</button>
 
+        </div>
+        <div class = 'row h-100 main'>
+          <div class = 'col-3 side'></div>
+
+          <div class='col-6 gamebox'>
+            <div class=' col-4 gameboard' id='0'></div>
+            <div class='col-4 gameboard' id='1'></div>
+            <div class='col-4 gameboard' id='2'></div>
+            <div class='col-4 gameboard' id='3'></div>
+            <div class='col-4 gameboard' id='4'></div>
+            <div class='col-4 gameboard' id='5'></div>
+            <div class='col-4 gameboard' id='6'></div>
+            <div class='col-4 gameboard' id='7'></div>
+            <div class='col-4 gameboard' id='8'></div>
+          </div>
+
+          <div class='col-3 gameData'>
+            <button id='showAll'>Previous Games</button>
+            <button id='showFin'>Completed Games</button>
+            <button id='showNotFin'>Incomplete Games</button>
+            <button id='showById'>Delete Game</button>
+            <article class='history'></article>
+          </div>
+        </div>
+
+        <div class = 'row h-100 bottom'>
+          <button id='startGame'>New Game</button>
+        </div>
+
     </section>
-
-    <main>
-        <button class='startGame'>Start Game</button>
-        <div class='gamebox'>
-        <div class='gameboard' id='0' data-num='0'> 1</div>
-        <div class='gameboard' id='1' data-num='1'> 2</div>
-        <div class='gameboard' id='2' data-num='2'>3 </div>
-        <div class='gameboard' id='3' data-num='3'>4 </div>
-        <div class='gameboard' id='4' data-num='4'>5 </div>
-        <div class='gameboard' id='5' data-num='5'> 6</div>
-        <div class='gameboard' id='6' data-num='6'> 7</div>
-        <div class='gameboard' id='7' data-num='7'>8 </div>
-        <div class='gameboard' id='8' data-num='8'>9 </div>
-      </div>
-    </main>
-
   </body>
 </html>

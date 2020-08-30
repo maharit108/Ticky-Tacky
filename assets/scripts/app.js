@@ -16,7 +16,12 @@ $(() => {
   $('#cpForm').hide()
   $('#sout').hide()
 
-  $('.startGame').on('click', gameEvent.startGame)
+  $('#startGame').on('click', gameEvent.startGame)
+  $('#startGame').hide()
+  $('#showAll').add('#showFin').add('#showNotFin').on('click', gameEvent.showGames)
+  $('#showById').on('click', gameEvent.deleteGame)
+
+  $('.gameboard').on('click', gameEvent.gamePlay)
 })
 
-// $('#0').add('#1').add('#2').add('#3').add('#4').add('#5').add('#6').add('#7').add('#8').on('click', authEvents.attempt)
+//

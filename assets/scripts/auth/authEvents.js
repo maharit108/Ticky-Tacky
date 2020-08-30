@@ -8,10 +8,14 @@ const signUpSubmit = function (event) {
   event.preventDefault()
   const form = event.target
   const formValue = getFormFields(form)
-  console.log(formValue)
-  authApi.signUpFunc(formValue)
-    .then(authUi.signUpSuccess)
-    .catch(authUi.signUpFail)
+  if (formValue.credentials.password !== formValue.credentials.password_confirmation) {
+    $('.authMsg').text("Passwords don't Match")
+    $('#supForm').trigger('reset')
+  } else {
+    authApi.signUpFunc(formValue)
+      .then(authUi.signUpSuccess)
+      .catch(authUi.signUpFail)
+  }
 }
 
 const signInSubmit = function (event) {

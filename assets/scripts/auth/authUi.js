@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('./../store')
+const gameEvent = require('./../game/gameEvents')
 
 const signUpSuccess = function (response) {
   $('.authMsg').text("You're ready!!! \n Sign In to Play")
@@ -20,7 +21,9 @@ const signInSuccess = function (response) {
   $('#supForm').hide()
   $('#sinForm').hide()
   $('#sout').show()
+  $('#startGame').show()
   store.user = response.user
+  gameEvent.startGame()
 }
 
 const signInFail = function (response) {
@@ -44,6 +47,7 @@ const soutSuccess = function () {
   $('#sinForm').show()
   $('#cpForm').hide()
   $('#sout').hide()
+  $('#startGame').hide()
 }
 
 const soutFail = function () {

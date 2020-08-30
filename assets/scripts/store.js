@@ -3,6 +3,10 @@
 const store = {
 }
 
+const winCond = ''
+
+const sign = 'X'
+
 module.exports = {
-  store
+  store, winCond, sign
 }
