@@ -7,6 +7,9 @@ const signUpSuccess = function (response) {
   $('.authMsg').text("You're ready!!! \n Sign In to Play")
   $('#supForm').trigger('reset')
   $('#supForm').hide()
+  $('.signup').hide()
+  $('.login').show()
+  $('.newuse').show()
 }
 
 const signUpFail = function (response) {
@@ -22,6 +25,8 @@ const signInSuccess = function (response) {
   $('#sinForm').hide()
   $('#sout').show()
   $('#startGame').show()
+  $('.newuse').hide()
+  $('.startMsg').hide()
   store.user = response.user
   gameEvent.startGame()
 }

@@ -15,6 +15,19 @@ $(() => {
   $('#sout').on('click', authEvent.signOut)
   $('#cpForm').hide()
   $('#sout').hide()
+  $('#supForm').hide()
+  $('.newuse').on('click', () => {
+    $('.signup').show()
+    $('.login').hide()
+    $('.newuse').hide()
+    $('.startMsg').css({ border: '1px solid black', width: 'calc(175px + 2em)', height: '35px', 'text-align': 'center', 'margin-bottom': '15px' })
+  })
+  $('.startMsg').on('click', () => {
+    $('.signup').hide()
+    $('.login').show()
+    $('.newuse').show()
+    $('.startMsg').css('border', '0px')
+  })
 
   $('#startGame').on('click', gameEvent.startGame)
   $('#startGame').hide()
@@ -22,6 +35,9 @@ $(() => {
   $('#showById').on('click', gameEvent.deleteGame)
 
   $('.gameboard').on('click', gameEvent.gamePlay)
+  $('.gamebox').hide()
+  $('.gameData').hide()
+
 })
 
 //

@@ -14,39 +14,32 @@
 
     <body>
       <section class = 'container'>
-        <div class = 'row h-100 top'>
+        <div class = 'row top'>
           <h1>O-X-O</h1>
-          <span class='authMsg'></span>
-
-          <form id='supForm'>
+          <br>
+          <span class='startMsg'>Log In to play</span>
+          <form class = 'login' id='sinForm'>
+            <label for='sinEmail'>Email</label>
+              <input name="credentials[email]" type='email' id = 'sinEmail' placeholder='abc@gmail.com'>
+            <label for='sinPwd'>Password</label>
+              <input name="credentials[password]" type='password' id = 'sinPwd' placeholder='********'>
+              <br>
+              <input type="submit" value='Log In'>
+          </form>
+          <button class='newuse'>Sign Up</button>
+          <form class='signup' id='supForm'>
             <label for='supEmail'>Email</label>
               <input name="credentials[email]" type='email' id='supEmail' placeholder='abc@gmail.com' >
             <label for='supPassword'>Password</label>
               <input name="credentials[password]" type='password' id='supPassword'  placeholder='********' >
             <label for='supConfirm'>Confirm Password</label>
               <input name="credentials[password_confirmation]" type='password' id='supConfirm'  placeholder='********' >
+              <br>
             <input type="submit" value='Sign Up'>
           </form>
-
-          <form id='sinForm'>
-            <label for='sinEmail'>Email</label>
-              <input name="credentials[email]" type='email' id = 'sinEmail' placeholder='abc@gmail.com'>
-            <label for='sinPwd'>Password</label>
-              <input name="credentials[password]" type='password' id = 'sinPwd' placeholder='********'>
-              <input type="submit" value='Log In'>
-          </form>
-
-          <form id='cpForm'>
-            <label for='oldpwd'>Old Password</label>
-              <input name="passwords[old]" type='password' id = 'oldpwd' placeholder='********'>
-            <label for='newpwd'>New Password</label>
-              <input name="passwords[new]" type='password' id = 'newpwd' placeholder='********'>
-              <input type="submit" value='Change Passwords'>
-          </form>
-
-          <button id='sout'>Sign Out</button>
-
+          <span class='authMsg'></span>
         </div>
+
         <div class = 'row h-100 main'>
           <div class = 'col-3 side'></div>
 
@@ -62,19 +55,29 @@
             <div class='col-4 gameboard' id='8'></div>
           </div>
 
-          <div class='col-3 gameData'>
-            <button id='showAll'>Previous Games</button>
-            <button id='showFin'>Completed Games</button>
-            <button id='showNotFin'>Incomplete Games</button>
-            <button id='showById'>Delete Game</button>
-            <article class='history'></article>
-          </div>
         </div>
 
         <div class = 'row h-100 bottom'>
           <button id='startGame'>New Game</button>
         </div>
 
+        <div class='gameData'>
+          <button id='showAll'>Previous Games</button>
+          <button id='showFin'>Completed Games</button>
+          <button id='showNotFin'>Incomplete Games</button>
+          <button id='showById'>Delete Game</button>
+          <article class='history'></article>
+        </div>
+
     </section>
+    <form id='cpForm'>
+      <label for='oldpwd'>Old Password</label>
+        <input name="passwords[old]" type='password' id = 'oldpwd' placeholder='********'>
+      <label for='newpwd'>New Password</label>
+        <input name="passwords[new]" type='password' id = 'newpwd' placeholder='********'>
+        <input type="submit" value='Change Passwords'>
+    </form>
+
+    <button id='sout'>Sign Out</button>
   </body>
 </html>
