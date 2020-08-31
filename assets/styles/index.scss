@@ -7,10 +7,12 @@
 h1 {
   font-size: 15vh;
 }
+
 .startMsg {
   margin-bottom: 2px;
   font-size: 18px;
 }
+
 .top {
   align-items: center;
   display: flex;
@@ -49,20 +51,38 @@ h1 {
   }
 }
 
-
-
-
-.gameboard {
-  border: 3px solid black;
-  height: 100px;
-  width: 100px;
-
+.gamebox {
+  max-height: 64vh;
+  min-width: 60vh;
+  border: 1px solid black;
+  padding: 2vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.gamebox {
-  border: 3px solid black;
+.gameboard {
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  height: calc(60vh / 3);
+  width: calc(100% / 3);
+  user-select: none;
+  font-size: 13vh;
   display: flex;
-  flex-wrap: wrap;
-  height: 306px;
-  width: 306px;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px rgba(0, 0, 0, .25);
+  &:nth-child(3n) {
+  border-right: 0px;
+}
+&:nth-last-child(-1n + 3) {
+ border-bottom: 0px;
+}
+&:hover {
+   background-color: LightSteelBlue;
+   cursor: pointer;
+ }
 }

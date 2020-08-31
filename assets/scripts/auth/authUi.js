@@ -29,6 +29,8 @@ const signInSuccess = function (response) {
   $('.startMsg').hide()
   store.user = response.user
   gameEvent.startGame()
+  $('.gamebox').show()
+  $('.gameData').show()
 }
 
 const signInFail = function (response) {
