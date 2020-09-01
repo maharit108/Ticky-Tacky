@@ -20,17 +20,11 @@ const signUpFail = function (response) {
 const signInSuccess = function (response) {
   $('.authMsg').text(`Let's Play!!! \n User:${response.user.email}`)
   $('#sinForm').trigger('reset')
-  $('#cpForm').show()
-  $('#supForm').hide()
-  $('#sinForm').hide()
-  $('#sout').show()
   $('#startGame').show()
-  $('.newuse').hide()
-  $('.startMsg').hide()
   store.user = response.user
   gameEvent.startGame()
-  $('.gamebox').show()
-  $('.gameData').show()
+  $('.main').show()
+  $('.top').hide()
 }
 
 const signInFail = function (response) {
@@ -39,22 +33,19 @@ const signInFail = function (response) {
 }
 
 const changePwSuccess = function () {
-  $('.authMsg').text('Password Changed')
+  $('#pwMsg').text('Password Changed')
   $('#cpForm').trigger('reset')
 }
 
 const changePwFail = function () {
-  $('.authMsg').text("Couldn't change Password. Try Again")
+  $('#pwMsg').text("Couldn't change Password. Try Again")
   $('#cpForm').trigger('reset')
 }
 
 const soutSuccess = function () {
-  $('.authMsg').text('Sign In to Play')
-  $('#supForm').show()
-  $('#sinForm').show()
-  $('#cpForm').hide()
-  $('#sout').hide()
-  $('#startGame').hide()
+  $('.authMsg').text('Log In to Play')
+  $('.top').show()
+  $('.main').hide()
 }
 
 const soutFail = function () {

@@ -2,15 +2,7 @@
 
 .container {
   height: 100vh;
-}
-
-h1 {
-  font-size: 15vh;
-}
-
-.startMsg {
-  margin-bottom: 2px;
-  font-size: 18px;
+  margin: 0 auto;
 }
 
 .top {
@@ -20,6 +12,10 @@ h1 {
   justify-content: center;
 }
 
+.top h1 {
+  font-size: 15vh;
+}
+
 .top .login {
   border: 1px solid black;
   border-radius: 10%;
@@ -27,10 +23,6 @@ h1 {
   flex-direction: column;
   margin: 0px auto 2em;
   padding: 1em;
-
-  input[type='submit'] {
-
-  }
 }
 
 .top .newuse {
@@ -45,11 +37,51 @@ h1 {
   flex-direction: column;
   margin: 3px auto 2em;
   padding: 1em;
-
-  input[type='submit'] {
-
-  }
 }
+
+.startMsg {
+  margin-bottom: 2px;
+  font-size: 18px;
+}
+
+
+.game-hist {
+  display: flex;
+  justify-content: space-between;
+}
+
+// .game-history article {
+//
+// }
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main .disbox {
+  font-size: 4vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .play-again {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2vh;
+}
+
+.main .play-again button {
+  min-width: calc(60vh / 3);
+  font-size: 3vh;
+}
+
 
 .gamebox {
   max-height: 64vh;
@@ -65,8 +97,8 @@ h1 {
 }
 
 .gameboard {
-  border-bottom: 2px solid black;
-  border-right: 2px solid black;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
   height: calc(60vh / 3);
   width: calc(100% / 3);
   user-select: none;

@@ -41,6 +41,33 @@
         </div>
 
         <div class = 'row main'>
+
+          <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+            <a href="#" class='navbar-brand'>O-X-O</a>
+            <button class='navbar-toggler' data-toggle='collapse' data-target='#navMenu'>
+              <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navMenu'>
+            <ul class='navbar-nav ml-auto'>
+              <li class='nav-item'><a href='#' class='nav-link' data-toggle='modal' data-target='#cngpw'>Change Password</a> </li>
+              <li class='nav-item'><a href='#' class='nav-link' data-toggle='modal' data-target='#gamedata'>Achievements</a> </li>
+              <li class='nav-item' data-toggle='modal' data-target='#help'><a href='#' class='nav-link'>Help </a></li>
+              <li class='nav-item'><a href='#' class='nav-link' id='sout'>Sign Out</a> </li>
+            </ul>
+            </div>
+          </nav><br>
+
+          <div class='col-12 disbox'><span class='results'></span></div>
+
+          <!-- <div class='col-2 pl1'>
+            <div>
+              <h4>Select Your Sign</h4>
+              <button class = 'X'>X</button>
+              <button class = 'X'>O</button>
+            </div>
+            <div class='pl1-show'></div>
+          </div> -->
+
           <div class='col-8 gamebox'>
             <div class=' col-4 gameboard' id='0'></div>
             <div class='col-4 gameboard' id='1'></div>
@@ -52,29 +79,96 @@
             <div class='col-4 gameboard' id='7'></div>
             <div class='col-4 gameboard' id='8'></div>
           </div>
-        </div>
 
-        <div class = 'row bottom'>
-          <button id='startGame'>New Game</button>
+          <!-- <div class='col-2 pl2'>
+            <div>
+              <h4>Select Your Sign</h4>
+              <button class = 'X'>X</button>
+              <button class = 'X'>O</button>
+            </div>
+            <div class='pl2-show'></div>
+          </div> -->
+
+          <div class='col-12 play-again'>
+          <button id='startGame'>Play Again</button>
+          </div>
         </div>
 
         <div class='gameData'>
-          <button id='showAll'>Previous Games</button>
-          <button id='showFin'>Completed Games</button>
-          <button id='showNotFin'>Incomplete Games</button>
           <button id='showById'>Delete Game</button>
-          <article class='history'></article>
         </div>
 
     </section>
-    <form id='cpForm'>
-      <label for='oldpwd'>Old Password</label>
-        <input name="passwords[old]" type='password' id = 'oldpwd' placeholder='********'>
-      <label for='newpwd'>New Password</label>
-        <input name="passwords[new]" type='password' id = 'newpwd' placeholder='********'>
-        <input type="submit" value='Change Passwords'>
-    </form>
 
-    <button id='sout'>Sign Out</button>
+    <div class = 'modal fade' id='cngpw'>
+     <div class='modal-dialog modal-sm modal-dialog-centered'>
+      <div class='modal-content'>
+      <div class='modal-header'>
+        <h4>Change Password</h4>
+      </div>
+      <form id='cpForm'>
+      <div class='modal-body'>
+          <label for='oldpwd'>Old Password</label>
+          <input name="passwords[old]" type='password' id = 'oldpwd' placeholder='********'>
+          <label for='newpwd'>New Password</label>
+          <input name="passwords[new]" type='password' id = 'newpwd' placeholder='********'>
+      </div>
+      <div class='modal-footer'>
+        <input class='btn btn-primary' type="submit" value='Change Passwords' data-toggle='modal' data-target='#pwMsgShow' id='submit'>
+      </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+    <div class = 'modal fade' id='pwMsgShow'>
+      <div class='modal-dialog modal-sm modal-dialog-centered'>
+      <div class='modal-content'>
+        <div class='modal-body' id='pwMsg'></div>
+        <div class='modal-footer'>
+          <button class='btn btn-primary' data-dismiss='modal' id='close'>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class = 'modal fade' id='help'>
+      <div class='modal-dialog modal-lg modal-dialog-centered' role='document'>
+        <div class='modal-content'>
+          <div class='modal-header'><h2>Rule Book</h2></div>
+          <div class='modal-body'>
+            <ul>
+              <li>The game is played on a grid that's 3 squares by 3 squares.</li>
+              <li>You are X, your friend (or the computer in this case) is O. Players take turns putting their marks in empty squares.</li>
+              <li>The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.</li>
+              <li>When all 9 squares are full, the game is over.</li>
+          </ul>
+        </div>
+        <div class='modal-footer'>
+          <button class='btn btn-primary' data-dismiss='modal' id='close'>Close</button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class = 'modal fade' id='gamedata'>
+      <div class='modal-dialog modal-lg moda-dialog-centered'>
+        <div class='modal-content'>
+          <div class='modal-header'><h2>Game History</h2></div>
+          <div class='modal-body'>
+            <div  class='game-hist'>
+            <button id='showAll'>All Games</button>
+            <button id='showFin'>Completed Games</button>
+            <button id='showNotFin'>Incomplete Games</button>
+          </div>
+            <article class='history'></article>
+        </div>
+        <div class='modal-footer'>
+          <button class='btn btn-primary' data-dismiss='modal' id='close'>Close</button>
+        </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>

@@ -19,15 +19,15 @@ const showGames = function (event) {
 const gamePlay = function () {
   if ($(`#${event.target.id}`).html() === '') {
     if (store.winCond === '') {
-    $(`#${event.target.id}`).text(store.sign)
-    const indx = event.target.id
-    store.sign === 'O' ? store.sign = 'X' : store.sign = 'O'
-    console.log('event:', store.sign)
-    gameApi.updateGame(indx, store.sign, false)
-      .then(gameUi.upSuccess)
-      .catch(() => console.log('fail'))
+      $(`#${event.target.id}`).text(store.sign)
+      const indx = event.target.id
+      store.index = indx
+      gameApi.updateGame(indx, store.sign, false)
+        .then(gameUi.upSuccess)
+        .catch(() => console.log('fail'))
+    }
   }
-}
+  store.sign === 'O' ? store.sign = 'X' : store.sign = 'O'
 }
 
 const deleteGame = function () {

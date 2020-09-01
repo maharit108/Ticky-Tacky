@@ -29,6 +29,7 @@ const signInSubmit = function (event) {
 
 const changePwSubmit = function (event) {
   event.preventDefault()
+  $('#cngpw').modal('hide')
   const form = event.target
   const formValue = getFormFields(form)
   authApi.changePwFunc(formValue)
