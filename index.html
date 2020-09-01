@@ -56,6 +56,7 @@
             </ul>
             </div>
           </nav><br>
+             <div class='overview'></div>
 
           <div class='col-12 disbox'><span class='results'></span></div>
 
@@ -94,14 +95,10 @@
         </div>
 
           <div class='col-12 play-again'>
-          <button id='startGame'>Play Again</button>
+            <button id='startGame'>Play Again</button>
           </div>
-        </div>
 
-        <div class='gameData'>
-          <button id='showById'>Delete Game</button>
         </div>
-
     </section>
 
     <div class = 'modal fade' id='cngpw'>
@@ -143,8 +140,8 @@
           <div class='modal-body'>
             <ul>
               <li>The game is played on a grid that's 3 squares by 3 squares.</li>
-              <li>You are X, your friend (or the computer in this case) is O. Players take turns putting their marks in empty squares.</li>
-              <li>The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.</li>
+              <li>Choose your sign. Players take turns putting their marks in empty squares.</li>
+              <li>The first player to get 3 marks in a row (up, down, across, or diagonally) is the winner.</li>
               <li>When all 9 squares are full, the game is over.</li>
           </ul>
         </div>
@@ -162,17 +159,17 @@
           <div class='modal-body'>
             <div  class='game-hist'>
             <button id='showAll'>All Games</button>
-            <button id='showFin'>Completed Games</button>
-            <button id='showNotFin'>Incomplete Games</button>
+            <button id='showFin'>Completed</button>
+            <button id='showNotFin'>Incomplete</button>
           </div>
             <article class='history'></article>
         </div>
         <div class='modal-footer'>
+          <button id='del'>Delete Game</button>
           <button class='btn btn-primary' data-dismiss='modal' id='close'>Close</button>
         </div>
         </div>
       </div>
     </div>
-
   </body>
 </html>

@@ -57,6 +57,14 @@ const deleteGame = function () {
     .then(gameUi.deleteGameSuccess)
     .catch(gameUi.deleteGameFail)
 }
+
+const showOne = function (event) {
+  console.log(event.target.id)
+  // gameApi.showAllFunc(event.target.id)
+  //   .then(gameUi.showallSuccess)
+  //   .catch(gameUi.showAllFail)
+  $('#del').show()
+}
 module.exports = {
-  startGame, showGames, gamePlay, deleteGame, signSelect
+  startGame, showGames, gamePlay, deleteGame, signSelect, showOne
 }

@@ -32,11 +32,10 @@ $(() => {
   $('#startGame').on('click', gameEvent.startGame)
   $('.gameboard').on('click', gameEvent.gamePlay)
   $('#startGame').hide()
-  $('.gameData').hide()
+  $('#del').hide()
 
   $('#showAll').add('#showFin').add('#showNotFin').on('click', gameEvent.showGames)
-  $('#showById').on('click', gameEvent.deleteGame)
-  $('#game').on('click', gameEvent.showOne)
+  $('#del').on('click', gameEvent.deleteGame)
 
   $('.X').add('.O').on('click', gameEvent.signSelect)
 })
