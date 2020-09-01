@@ -37,4 +37,6 @@ $(() => {
   $('#showAll').add('#showFin').add('#showNotFin').on('click', gameEvent.showGames)
   $('#showById').on('click', gameEvent.deleteGame)
   $('#game').on('click', gameEvent.showOne)
+
+  $('.X').add('.O').on('click', gameEvent.signSelect)
 })

@@ -2,7 +2,7 @@
 
 .container {
   height: 100vh;
-  margin: 0 auto;
+  width: 100vw;
 }
 
 .top {
@@ -10,34 +10,35 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  h1 {
+    font-size: 15vh;
+  }
+
+  .login {
+    border: 1px solid black;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto 2em;
+    padding: 1em;
+  }
+
+  .newuse {
+    height: 30px;
+    width: 175px;
+  }
+
+  .signup {
+    border: 1px solid black;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    margin: 3px auto 2em;
+    padding: 1em;
+  }
 }
 
-.top h1 {
-  font-size: 15vh;
-}
-
-.top .login {
-  border: 1px solid black;
-  border-radius: 10%;
-  display: flex;
-  flex-direction: column;
-  margin: 0px auto 2em;
-  padding: 1em;
-}
-
-.top .newuse {
-  height: 30px;
-  width: 175px;
-}
-
-.top .signup {
-  border: 1px solid black;
-  border-radius: 5%;
-  display: flex;
-  flex-direction: column;
-  margin: 3px auto 2em;
-  padding: 1em;
-}
 
 .startMsg {
   margin-bottom: 2px;
@@ -56,9 +57,47 @@
 
 
 .main {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  .center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .pl1, .pl2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  h4{
+    font-size: 2.5vh;
+  }
+
+  h3{
+    font-size: 2vh;
+  }
+
+  .pl1-show, .pl2-show {
+    text-align: center;
+    min-width: 10vh;
+    max-height: 15vh;
+    border: 1px solid black;
+    font-size: 3vh;
+  }
+
+  button {
+    width: 10vh;
+    margin: 2px;
+  }
 }
 
 .main .disbox {

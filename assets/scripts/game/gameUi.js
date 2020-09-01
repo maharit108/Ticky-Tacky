@@ -7,16 +7,16 @@ const gameApi = require('./gameApi')
 const startSuccess = function (response) {
   store.gameOn = response.game
   $('.gameboard').text('')
-  store.sign = 'X'
+  store.sign = ''
   store.winCond = ''
 }
 
 const startFail = function (response) {
-  console.log('Nooo', response)
+  console.log('Error: Start Fail')
 }
 
 const deleteGameFail = function (response) {
-  console.log('Nooo', response)
+  console.log('Error: Delete Game')
 }
 
 const deleteGameSuccess = function (response) {
@@ -38,7 +38,7 @@ const showallSuccess = function (response) {
 }
 
 const showallFail = function (response) {
-  console.log('Fail', response)
+  console.log('Error: Show All')
 }
 
 const upSuccess = function (response) {
@@ -47,7 +47,6 @@ const upSuccess = function (response) {
   if (store.winCond === 'X' || store.winCond === 'O' || store.winCond === 'T') {
     gameApi.updateGame(store.index, store.sign, store.bool)
   }
-  console.log(store.gameOn.cells, store.gameOn.over, store.winCond)
 }
 
 module.exports = {

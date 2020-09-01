@@ -8,6 +8,7 @@ const win = function () {
   if (chk.includes('') === false) {
     store.bool = true
     store.winCond = 'T'
+    $('.disbox').show()
     $('.results').text('Game-Tie')
   } else {
     chk.map(function (val, index, arr) {
@@ -18,10 +19,12 @@ const win = function () {
     if (winCond.some(arr => arr.every(val => x.includes(val)))) {
       store.winCond = 'X'
       store.bool = true
+      $('.disbox').show()
       $('.results').text('X WINS')
     } else if (winCond.some(arr => arr.every(val => y.includes(val)))) {
       store.winCond = 'O'
       store.bool = true
+      $('.disbox').show()
       $('.results').text('O WINS')
     } else {
       store.winCond = ''

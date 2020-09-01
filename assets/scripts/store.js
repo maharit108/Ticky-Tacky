@@ -5,7 +5,7 @@ const store = {
 
 const winCond = ''
 
-const sign = 'X'
+const sign = ''
 
 const bool = false
 
