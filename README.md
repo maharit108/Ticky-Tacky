@@ -4,7 +4,7 @@
 This is a simple application, that allows 2 users to play Tic-Tac-Toe. This application showcases the uses of JQuery event handlers, basic bootstrap modeling and API call requests.
 
 ## Links
-**Deployed Application :**
+**Deployed Application :**https://maharit108.github.io/Ticky-Tacky/
 
 **API USER documentation :** <https://git.generalassemb.ly/ga-wdi-boston/game-project-api/blob/master/docs/user.md>
 
