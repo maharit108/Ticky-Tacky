@@ -21,7 +21,9 @@ This is a simple application, that allows 2 users to play Tic-Tac-Toe. This appl
 
 ## Planning Story
 This application uses the Single Page Application (SPA) concept. There are many user-views in the application but the whole application is technically just a single page. The whole application can be broken down into 2 major parts which has smaller modules of their own. In general, app can be divided as:
-1. API requests
+
+1. API requests-
+
 	  a. User Authorization-
 	  - Sign Up
 	  -  Sign In
@@ -31,7 +33,7 @@ This application uses the Single Page Application (SPA) concept. There are many 
 	b. Game Process-
 	- Create game
 	- Update game data
-     - Access previous games
+     - Access previous games-
        - All games
        - Completed games
         - Incomplete games
@@ -39,11 +41,12 @@ This application uses the Single Page Application (SPA) concept. There are many 
       - Delete game
 
 
-3. UI
+3. UI-
 	- UI for all user authorization process.
    - UI for game board to play game
    - UI for game results
    - UI to showcase previous game data
+
 
 
 All API request call is verified first using curl scripts following the API documentation. Then each request is made as required upon trigger by event handlers using AJAX and JQuery.
