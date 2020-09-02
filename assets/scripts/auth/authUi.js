@@ -18,13 +18,13 @@ const signUpFail = function (response) {
 }
 
 const signInSuccess = function (response) {
-  $('.authMsg').text(`Let's Play!!! \n User:${response.user.email}`)
   $('#sinForm').trigger('reset')
   $('#startGame').show()
   store.user = response.user
   gameEvent.startGame()
   $('.main').show()
   $('.top').hide()
+  $('header').show()
 }
 
 const signInFail = function (response) {
@@ -46,10 +46,11 @@ const soutSuccess = function () {
   $('.authMsg').text('Log In to Play')
   $('.top').show()
   $('.main').hide()
+  $('header').hide()
 }
 
 const soutFail = function () {
-  $('.authMsg').text("Couldn't Sign Out")
+  console.log('Error:: Sign Out')
 }
 
 module.exports = {

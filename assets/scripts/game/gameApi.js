@@ -34,11 +34,21 @@ const showAllFunc = function (btnId) {
 
 const deleteGameFunc = function () {
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.games[0]._id,
+    url: config.apiUrl + '/games/' + store.gameid,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
     method: 'DELETE'
+  })
+}
+
+const showGameFunc = function (gameid) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + gameid,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    method: 'GET'
   })
 }
 
@@ -63,5 +73,5 @@ const updateGame = function (indx, mark, bool) {
 }
 
 module.exports = {
-  newGame, showAllFunc, updateGame, deleteGameFunc
+  newGame, showAllFunc, updateGame, deleteGameFunc, showGameFunc
 }

@@ -15,13 +15,16 @@ $(() => {
   $('#sout').on('click', authEvent.signOut)
 
   $('.main').hide()
+  $('header').hide()
   $('#supForm').hide()
+
   $('.newuse').on('click', () => {
     $('.signup').show()
     $('.login').hide()
     $('.newuse').hide()
     $('.startMsg').css({ border: '1px solid black', width: 'calc(175px + 2em)', height: '35px', 'text-align': 'center', 'margin-bottom': '15px' })
   })
+
   $('.startMsg').on('click', () => {
     $('.signup').hide()
     $('.login').show()
@@ -31,11 +34,12 @@ $(() => {
 
   $('#startGame').on('click', gameEvent.startGame)
   $('.gameboard').on('click', gameEvent.gamePlay)
+  $('#del').on('click', gameEvent.deleteGame)
+
   $('#startGame').hide()
   $('#del').hide()
 
-  $('#showAll').add('#showFin').add('#showNotFin').on('click', gameEvent.showGames)
-  $('#del').on('click', gameEvent.deleteGame)
-
   $('.X').add('.O').on('click', gameEvent.signSelect)
+  $('#showAll').add('#showFin').add('#showNotFin').on('click', gameEvent.showGames)
+  $('.history').on('click', '.databoard', gameEvent.showOne)
 })

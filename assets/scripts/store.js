@@ -9,6 +9,8 @@ const sign = ''
 
 const bool = false
 
+const gameid = ''
+
 module.exports = {
-  store, winCond, sign, bool
+  store, winCond, sign, bool, gameid
 }

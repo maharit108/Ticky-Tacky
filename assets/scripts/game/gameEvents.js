@@ -16,6 +16,7 @@ const startGame = function () {
 }
 
 const showGames = function (event) {
+  $(`#${event.target.id}`).css('background-color', 'rgba(195, 195, 195,0.5)')
   gameApi.showAllFunc(event.target.id)
     .then(gameUi.showallSuccess)
     .catch(gameUi.showAllFail)
@@ -59,11 +60,11 @@ const deleteGame = function () {
 }
 
 const showOne = function (event) {
-  console.log(event.target.id)
-  // gameApi.showAllFunc(event.target.id)
-  //   .then(gameUi.showallSuccess)
-  //   .catch(gameUi.showAllFail)
-  $('#del').show()
+  const gameid = event.target.parentElement.parentElement.parentElement.id
+  store.gameid = gameid
+  gameApi.showGameFunc(gameid)
+    .then(gameUi.showoneSuccess)
+    .catch(gameUi.showoneFail)
 }
 module.exports = {
   startGame, showGames, gamePlay, deleteGame, signSelect, showOne

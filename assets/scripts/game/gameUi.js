@@ -3,7 +3,6 @@
 const store = require('./../store.js')
 const brain = require('./gameBrains.js')
 const gameApi = require('./gameApi')
-const gameEvent = require('./gameEvents')
 
 const startSuccess = function (response) {
   store.gameOn = response.game
@@ -24,17 +23,17 @@ const deleteGameFail = function (response) {
 }
 
 const deleteGameSuccess = function (response) {
-  $('.history').text(`${store.games[0]._id} is deleted`)
-  store.games.shift()
+  $('.history').text('Delete complete')
+  $('#del').hide()
 }
 
 const showallSuccess = function (response) {
   store.games = response.games
-  console.log(response.games.length)
-  let displaymsg = '<ul id = `ulid`>'
+  let displaymsg = '<ol id = olid>'
   store.games.forEach(function (plays) {
     const pl = (`<br><li id = ${plays._id}>
-      <div class='databox'>
+    <div class='in'>
+    <div class='databox'>
         <div class='databoard'>${plays.cells[0]}</div>
         <div class='databoard'>${plays.cells[1]}</div>
         <div class='databoard'>${plays.cells[2]}</div>
@@ -44,16 +43,24 @@ const showallSuccess = function (response) {
         <div class='databoard'>${plays.cells[6]}</div>
         <div class='databoard'>${plays.cells[7]}</div>
         <div class='databoard'>${plays.cells[8]}</div>
+      </div>
       </div></li><br>`)
     displaymsg += pl
   })
-  displaymsg += '</ul>'
+  displaymsg += '</ol>'
   $('.history').html(displaymsg)
-  // $('.a').on('click', gameEvent.showOne)
+  $('ol').css('list-style-type', 'none')
+  $('#del').hide()
 }
 
 const showallFail = function (response) {
   console.log('Error: Show All')
+  $('#del').hide()
+}
+
+const showoneFail = function (response) {
+  console.log('Error: Show One')
+  $('#del').hide()
 }
 
 const upSuccess = function (response) {
@@ -64,6 +71,26 @@ const upSuccess = function (response) {
   }
 }
 
+const showoneSuccess = function (response) {
+  let displaymsg = ''
+  displaymsg += (
+    `<div class='in1'>
+    <div class='databox1'>
+        <div class='databoard1'>${response.game[0].cells[0]}</div>
+        <div class='databoard1'>${response.game[0].cells[1]}</div>
+        <div class='databoard1'>${response.game[0].cells[2]}</div>
+        <div class='databoard1'>${response.game[0].cells[3]}</div>
+        <div class='databoard1'>${response.game[0].cells[4]}</div>
+        <div class='databoard1'>${response.game[0].cells[5]}</div>
+        <div class='databoard1'>${response.game[0].cells[6]}</div>
+        <div class='databoard1'>${response.game[0].cells[7]}</div>
+        <div class='databoard1'>${response.game[0].cells[8]}</div>
+      </div>
+      </div>`)
+  $('.history').html(displaymsg)
+  $('#del').show()
+}
+
 module.exports = {
-  startFail, startSuccess, showallSuccess, showallFail, deleteGameFail, deleteGameSuccess, upSuccess
+  startFail, startSuccess, showallSuccess, showallFail, deleteGameFail, deleteGameSuccess, upSuccess, showoneSuccess, showoneFail
 }
