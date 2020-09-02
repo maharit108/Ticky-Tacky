@@ -81,3 +81,17 @@ ___
 ## Images
 
 **Initial Wireframe:**![Wireframe](./public/20200824_192016.jpg)
+
+## Acknowlwdgements
+
+- MicFin
+- Eron
+- Ryry
+- Alex Beers
+- Timm Schoenborn
+- Huy Nguyen
+- CSS Tricks <https://css-tricks.com/snippets/css/a-guide-to-flexbox/>
+- Bootstrap <https://getbootstrap.com/docs/4.5/getting-started/introduction/>
+- Rules of Game <https://www.exploratorium.edu/brain_explorer/tictactoe.html>
+- Understanding the game <https://en.wikipedia.org/wiki/Tic-tac-toe>
+- Guys in Ancient Egypt and Roman Empire who actually developed the game.
