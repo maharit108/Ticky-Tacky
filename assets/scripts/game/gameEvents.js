@@ -8,8 +8,9 @@ const startGame = function () {
   $('.btn').show()
   $('.pl1-show').hide()
   $('.pl2-show').hide()
-  $('.disbox').hide()
   store.sign = ''
+  $('.pl1-show').text('')
+  $('.results').text('Select Your Sign')
   gameApi.newGame()
     .then(gameUi.startSuccess)
     .catch(gameUi.startFail)
@@ -35,22 +36,25 @@ const signSelect = function (event) {
     $('.pl1-show').text('O')
     $('.pl2-show').text('X')
   }
+  $('.results').text('')
 }
 
 const gamePlay = function () {
-  if (store.sign !== '') {
-    if ($(`#${event.target.id}`).html() === '') {
-      if (store.winCond === '') {
-        $(`#${event.target.id}`).text(store.sign)
-        const indx = event.target.id
-        store.index = indx
-        gameApi.updateGame(indx, store.sign, false)
-          .then(gameUi.upSuccess)
-          .catch(() => console.log('fail'))
+  if ($('.pl1-show').text() !== '') {
+    if (store.sign !== '') {
+      if ($(`#${event.target.id}`).html() === '') {
+        if (store.winCond === '') {
+          $(`#${event.target.id}`).text(store.sign)
+          const indx = event.target.id
+          store.index = indx
+          gameApi.updateGame(indx, store.sign, false)
+            .then(gameUi.upSuccess)
+            .catch(() => console.log('fail'))
+        }
       }
     }
+    store.sign === 'O' ? store.sign = 'X' : store.sign = 'O'
   }
-  store.sign === 'O' ? store.sign = 'X' : store.sign = 'O'
 }
 
 const deleteGame = function () {
