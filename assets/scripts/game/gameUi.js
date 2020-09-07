@@ -1,5 +1,5 @@
 'use strict'
-
+// import files as needed
 const store = require('./../store.js')
 const brain = require('./gameBrains.js')
 const gameApi = require('./gameApi')
@@ -12,6 +12,10 @@ const startSuccess = function (response) {
 
   gameApi.showAllFunc('showAll')
     .then(response => $('.overview').text(`No of Games Played= ${response.games.length}`))
+
+  $('.gameboard').mouseover(function () {
+    $(this).css('background-color', 'white')
+  })
 }
 
 const startFail = function (response) {
@@ -68,6 +72,9 @@ const upSuccess = function (response) {
   brain.win()
   if (store.winCond === 'X' || store.winCond === 'O' || store.winCond === 'T') {
     gameApi.updateGame(store.index, store.sign, store.bool)
+    $('.gameboard').mouseover(function () {
+      $(this).css('background-color', 'white')
+    })
   }
 }
 

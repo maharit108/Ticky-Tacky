@@ -1,8 +1,9 @@
 'use strict'
-
+// require/import files
 const config = require('./../config.js')
 const store = require('./../store.js')
 
+// AJAX post call for new game; API game documentation referred
 const newGame = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
@@ -14,6 +15,7 @@ const newGame = function () {
   })
 }
 
+// AJAX get call for show games
 const showAllFunc = function (btnId) {
   let link = config.apiUrl + '/games'
   if (btnId === 'showAll') {
@@ -32,6 +34,7 @@ const showAllFunc = function (btnId) {
   })
 }
 
+// AJAX call for delete games
 const deleteGameFunc = function () {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.gameid,
@@ -42,6 +45,7 @@ const deleteGameFunc = function () {
   })
 }
 
+// AJAX call for show games by id
 const showGameFunc = function (gameid) {
   return $.ajax({
     url: config.apiUrl + '/games/' + gameid,
@@ -52,6 +56,7 @@ const showGameFunc = function (gameid) {
   })
 }
 
+// AJAX call for game update patch request
 const updateGame = function (indx, mark, bool) {
   let link = config.apiUrl + '/games/' + store.gameOn._id
   return $.ajax({
@@ -72,6 +77,7 @@ const updateGame = function (indx, mark, bool) {
   })
 }
 
+// export all functions from this file
 module.exports = {
   newGame, showAllFunc, updateGame, deleteGameFunc, showGameFunc
 }

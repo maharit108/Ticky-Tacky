@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+  <head>
       <title>Ticky-Tacky</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,28 +12,28 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
 
-    <body>
-        <!-- Nav bar for main game page... Put outside bootstrap container to avoid bootstrap container styling -->
-      <header>
-      <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
-        <a href="#" class='navbar-brand'>O-X-O</a>
-        <button class='navbar-toggler' data-toggle='collapse' data-target='#navMenu'>
-          <span class='navbar-toggler-icon'></span>
-        </button>
-        <div class='collapse navbar-collapse' id='navMenu'>
+  <body>
+    <!-- Nav bar for main game page... Put outside bootstrap container to avoid bootstrap container styling -->
+    <header>
+        <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+          <a href="#" class='navbar-brand'>O-X-O</a>
+          <button class='navbar-toggler' data-toggle='collapse' data-target='#navMenu'>
+            <span class='navbar-toggler-icon'></span>
+          </button>
+          <div class='collapse navbar-collapse' id='navMenu'>
             <!-- Items of nav bar most of which is linked to modal boxes -->
-        <ul class='navbar-nav ml-auto'>
-          <li class='nav-item'><a href='#' class='nav-link' data-toggle='modal' data-target='#cngpw'>Change Password</a> </li>
-          <li class='nav-item'><a href='#' class='nav-link' data-toggle='modal' data-target='#gamedata'>Achievements</a> </li>
-          <li class='nav-item' data-toggle='modal' data-target='#help'><a href='#' class='nav-link'>Help </a></li>
-          <li class='nav-item'><a href='#' class='nav-link' id='sout'>Sign Out</a> </li>
-        </ul>
-        </div>
-      </nav><br>
-    </header>
-      <!-- Main bootsrap container-->
-      <section class = 'container'>
-          <!--first section of content. this part hides after log in-->
+            <ul class='navbar-nav ml-auto'>
+              <li class='nav-item'><a href='#' class='nav-link' data-toggle='modal' data-target='#cngpw'>Change Password</a> </li>
+              <li class='nav-item'><a href='#' class='nav-link' data-toggle='modal' data-target='#gamedata'>Achievements</a> </li>
+              <li class='nav-item' data-toggle='modal' data-target='#help'><a href='#' class='nav-link'>Help </a></li>
+              <li class='nav-item'><a href='#' class='nav-link' id='sout'>Sign Out</a> </li>
+          </ul>
+          </div>
+        </nav><br>
+      </header>
+    <!-- Main bootsrap container-->
+    <main class = 'container'>
+        <!--first section of content. this part hides after log in-->
         <div class = 'row top'>
             <!-- Logo of game-->
           <h1>O-X-O</h1>
@@ -66,51 +66,53 @@
         </div>
         <!-- 2nd row of container/ main content/ shows up after sign in done and row top hides-->
         <div class = 'row main'>
-            <!-- empty div to display number of games played-->
-             <div class='overview'></div>
-            <!-- empty span to display game win/loos/tie/ div for bootstrap grid and toggle display on game end and game start-->
+          <!-- empty div to display number of games played-->
+          <div class='overview'></div>
+          <!-- empty span to display game win/loos/tie/ div for bootstrap grid and toggle display on game end and game start-->
           <div class='col-12 disbox'><span class='results'></span></div>
           <!-- mid section of page/ put to style main game board and 2 sections in both sides-->
-        <div class ='row center'>
+          <div class ='row center'>
             <!-- 1st side section of game/ user1 details (2/12) of grid row-->
-          <div class='col-2 pl1'>
-            <h4>USER - 1</h4>
-            <div class='btn'>
-              <h3>Choose:</h3>
-              <button class = 'X' id = 'X1'>X</button>
-              <button class = 'O' id = 'O1'>O</button>
+            <div class='col-2 pl1'>
+              <h4>USER - 1</h4>
+              <div class='btn'>
+                <h3>Choose:</h3>
+                <button class = 'X' id = 'X1'>X</button>
+                <button class = 'O' id = 'O1'>O</button>
+              </div>
+              <div class='pl1-show'></div>
             </div>
-            <div class='pl1-show'></div>
-          </div>
-          <!-- Main game board/ 9 divs with grid postion to get game board (8/12) of grid row-->
-          <div class='col-8 gamebox'>
-            <div class=' col-4 gameboard' id='0'></div>
-            <div class='col-4 gameboard' id='1'></div>
-            <div class='col-4 gameboard' id='2'></div>
-            <div class='col-4 gameboard' id='3'></div>
-            <div class='col-4 gameboard' id='4'></div>
-            <div class='col-4 gameboard' id='5'></div>
-            <div class='col-4 gameboard' id='6'></div>
-            <div class='col-4 gameboard' id='7'></div>
-            <div class='col-4 gameboard' id='8'></div>
-          </div>
-          <!-- 2nd side section of game/ user2 details (2/12) of grid row-->
-          <div class='col-2 pl2'>
-            <h4>USER - 2</h4>
-            <div class='btn'>
-              <h3>Choose:</h3>
-              <button class = 'X' id = 'X2'>X</button>
-              <button class = 'O' id = 'O2'>O</button>
+            <!-- Main game board/ 9 divs with grid postion to get game board (8/12) of grid row-->
+            <div class='col-8 gamebox'>
+              <div class=' col-4 gameboard' id='0'></div>
+              <div class='col-4 gameboard' id='1'></div>
+              <div class='col-4 gameboard' id='2'></div>
+              <div class='col-4 gameboard' id='3'></div>
+              <div class='col-4 gameboard' id='4'></div>
+              <div class='col-4 gameboard' id='5'></div>
+              <div class='col-4 gameboard' id='6'></div>
+              <div class='col-4 gameboard' id='7'></div>
+              <div class='col-4 gameboard' id='8'></div>
             </div>
-            <div class='pl2-show'></div>
+            <!-- 2nd side section of game/ user2 details (2/12) of grid row-->
+            <div class='col-2 pl2'>
+              <h4>USER - 2</h4>
+              <div class='btn'>
+                <h3>Choose:</h3>
+                <button class = 'X' id = 'X2'>X</button>
+                <button class = 'O' id = 'O2'>O</button>
+              </div>
+              <div class='pl2-show'></div>
+            </div>
           </div>
-        </div>
           <!--button at end of gameboard to restart game-->
           <div class='col-12 play-again'>
             <button id='startGame'>Play Again</button>
           </div>
         </div>
-    </section>
+    </main>
+
+    <div class='modals'>
     <!-- modal for password change/ trigger from nav bar-->
     <div class = 'modal fade' id='cngpw'>
      <div class='modal-dialog modal-sm modal-dialog-centered'>
@@ -130,8 +132,8 @@
       </div>
         </form>
       </div>
+      </div>
     </div>
-  </div>
     <!-- modal for password change success/fail message, trigerred from password change api results-->
     <div class = 'modal fade' id='pwMsgShow'>
       <div class='modal-dialog modal-sm modal-dialog-centered'>
@@ -142,8 +144,8 @@
           <button class='btn btn-primary' data-dismiss='modal' id='close'>Close</button>
         </div>
       </div>
+        </div>
     </div>
-  </div>
     <!-- modal for help content show/ trigger from nav bar-->
     <div class = 'modal fade' id='help'>
       <div class='modal-dialog modal-lg modal-dialog-centered' role='document'>
@@ -184,5 +186,6 @@
         </div>
       </div>
     </div>
+  </div>
   </body>
 </html>

@@ -37,6 +37,13 @@ const signSelect = function (event) {
     $('.pl2-show').text('X')
   }
   $('.results').text('')
+
+  $('.gameboard').mouseover(function () {
+    $(this).css('background-color', 'LightSteelBlue')
+  })
+  $('.gameboard').mouseout(function () {
+    $(this).css('background-color', 'white')
+  })
 }
 
 const gamePlay = function () {
