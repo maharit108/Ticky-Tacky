@@ -11,7 +11,7 @@ const startSuccess = function (response) {
   store.winCond = ''
 
   gameApi.showAllFunc('showAll')
-    .then(response => $('.overview').text(`No of Games Played= ${response.games.length}`))
+    .then(response => $('.overview').text(`No of Games = ${response.games.length}`))
 
   $('.gameboard').mouseover(function () {
     $(this).css('background-color', 'white')

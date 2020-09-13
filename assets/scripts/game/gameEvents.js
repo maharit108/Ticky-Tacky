@@ -36,8 +36,7 @@ const signSelect = function (event) {
     $('.pl1-show').text('O')
     $('.pl2-show').text('X')
   }
-  $('.results').text('')
-
+  $('.results').text(`Turn: ${store.sign}`)
   $('.gameboard').mouseover(function () {
     $(this).css('background-color', 'LightSteelBlue')
   })
@@ -51,6 +50,8 @@ const gamePlay = function () {
     if (store.sign !== '') {
       if ($(`#${event.target.id}`).html() === '') {
         if (store.winCond === '') {
+          store.sign === 'X' ? store.val = 'O' : store.val = 'X'
+          $('.results').text(`Turn: ${store.val}`)
           $(`#${event.target.id}`).text(store.sign)
           const indx = event.target.id
           store.index = indx
