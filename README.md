@@ -85,14 +85,8 @@ ___
 
 **Initial Wireframe:**![Wireframe](./public/20200824_192016.jpg)
 
-## Acknowlwdgements
+## Acknowledgements/Resources
 
-- MicFin
-- Eron
-- Ryry
-- Alex Beers
-- Timm Schoenborn
-- Huy Nguyen
 - CSS Tricks <https://css-tricks.com/snippets/css/a-guide-to-flexbox/>
 - Bootstrap <https://getbootstrap.com/docs/4.5/getting-started/introduction/>
 - Rules of Game <https://www.exploratorium.edu/brain_explorer/tictactoe.html>
