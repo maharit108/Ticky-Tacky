@@ -28,7 +28,7 @@ const deleteGameFail = function (response) {
 
 const deleteGameSuccess = function (response) {
   $('.history').text('Delete complete')
-  $('#del').hide()
+  $('#del').add('#edit').hide()
 }
 
 const showallSuccess = function (response) {
@@ -54,17 +54,17 @@ const showallSuccess = function (response) {
   displaymsg += '</ol>'
   $('.history').html(displaymsg)
   $('ol').css('list-style-type', 'none')
-  $('#del').hide()
+  $('#del').add('#edit').hide()
 }
 
 const showallFail = function (response) {
   console.log('Error: Show All')
-  $('#del').hide()
+  $('#del').add('#edit').hide()
 }
 
 const showoneFail = function (response) {
   console.log('Error: Show One')
-  $('#del').hide()
+  $('#del').add('#edit').hide()
 }
 
 const upSuccess = function (response) {
@@ -79,23 +79,27 @@ const upSuccess = function (response) {
 }
 
 const showoneSuccess = function (response) {
+  console.log(response)
   let displaymsg = ''
   displaymsg += (
     `<div class='in1'>
     <div class='databox1'>
-        <div class='databoard1'>${response.game[0].cells[0]}</div>
-        <div class='databoard1'>${response.game[0].cells[1]}</div>
-        <div class='databoard1'>${response.game[0].cells[2]}</div>
-        <div class='databoard1'>${response.game[0].cells[3]}</div>
-        <div class='databoard1'>${response.game[0].cells[4]}</div>
-        <div class='databoard1'>${response.game[0].cells[5]}</div>
-        <div class='databoard1'>${response.game[0].cells[6]}</div>
-        <div class='databoard1'>${response.game[0].cells[7]}</div>
-        <div class='databoard1'>${response.game[0].cells[8]}</div>
+        <div class='databoard1'>${response.game.cells[0]}</div>
+        <div class='databoard1'>${response.game.cells[1]}</div>
+        <div class='databoard1'>${response.game.cells[2]}</div>
+        <div class='databoard1'>${response.game.cells[3]}</div>
+        <div class='databoard1'>${response.game.cells[4]}</div>
+        <div class='databoard1'>${response.game.cells[5]}</div>
+        <div class='databoard1'>${response.game.cells[6]}</div>
+        <div class='databoard1'>${response.game.cells[7]}</div>
+        <div class='databoard1'>${response.game.cells[8]}</div>
       </div>
       </div>`)
   $('.history').html(displaymsg)
   $('#del').show()
+  if (!response.game.over) {
+    $('#edit').show()
+  }
 }
 
 module.exports = {

@@ -74,6 +74,7 @@ const deleteGame = function () {
 const showOne = function (event) {
   const gameid = event.target.parentElement.parentElement.parentElement.id
   store.gameid = gameid
+  console.log('events', gameid)
   gameApi.showGameFunc(gameid)
     .then(gameUi.showoneSuccess)
     .catch(gameUi.showoneFail)

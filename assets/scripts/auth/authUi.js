@@ -25,6 +25,7 @@ const signInSuccess = function (response) {
   $('.main').show()
   $('.top').hide()
   $('header').show()
+  console.log(store.user)
 }
 
 const signInFail = function (response) {

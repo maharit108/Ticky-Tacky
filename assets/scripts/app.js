@@ -37,7 +37,7 @@ $(() => {
   $('#del').on('click', gameEvent.deleteGame)
 
   $('#startGame').hide()
-  $('#del').hide()
+  $('#del').add('#edit').hide()
 
   $('.X').add('.O').on('click', gameEvent.signSelect)
   $('#showAll').add('#showFin').add('#showNotFin').on('click', gameEvent.showGames)

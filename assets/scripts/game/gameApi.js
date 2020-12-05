@@ -25,6 +25,7 @@ const showAllFunc = function (btnId) {
   } else {
     link += '?over=false'
   }
+  console.log(link)
   return $.ajax({
     url: link,
     headers: {
@@ -47,6 +48,7 @@ const deleteGameFunc = function () {
 
 // AJAX call for show games by id
 const showGameFunc = function (gameid) {
+  console.log('api', gameid)
   return $.ajax({
     url: config.apiUrl + '/games/' + gameid,
     headers: {
