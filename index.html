@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ticky-Tacky</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+  <body>
+    <!-- Nav bar for main game page... Put outside bootstrap container to avoid bootstrap container styling -->
+    <header>
+        <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+          <a href="#" class='navbar-brand'>O-X-O</a>
+          <button class='navbar-toggler' data-toggle='collapse' data-target='#navMenu'>
+            <span class='navbar-toggler-icon'></span>
+          </button>
+          <div class='collapse navbar-collapse' id='navMenu'>
+            <!-- Items of nav bar most of which is linked to modal boxes -->
+            <ul class='navbar-nav ml-auto'>
+              <li class='nav-item'><a href='#' class='nav-link' data-toggle='modal' data-target='#cngpw'>Change Password</a> </li>
+              <li class='nav-item'><a href='#' class='nav-link' data-toggle='modal' data-target='#gamedata'>Achievements</a> </li>
+              <li class='nav-item' data-toggle='modal' data-target='#help'><a href='#' class='nav-link'>Help </a></li>
+              <li class='nav-item'><a href='#' class='nav-link' id='sout'>Sign Out</a> </li>
+          </ul>
+          </div>
+        </nav><br>
+      </header>
+    <!-- Main bootsrap container-->
+    <main class = 'container'>
+        <!--first section of content. this part hides after log in-->
+        <div class = 'row top'>
+            <!-- Logo of game-->
+          <h1>O-X-O</h1>
+          <br>
+            <!-- start message/ also acts as toggle for sign in form-->
+          <span class='startMsg'>Log In to play</span>
+            <!-- sign in form-->
+          <form class = 'login' id='sinForm'>
+            <label for='sinEmail'>Email</label>
+              <input name="credentials[email]" type='email' id = 'sinEmail' placeholder='abc@gmail.com'>
+            <label for='sinPwd'>Password</label>
+              <input name="credentials[password]" type='password' id = 'sinPwd' placeholder='********'>
+              <br>
+              <input type="submit" value='Log In'>
+          </form>
+            <!-- button to toggle sign up form-->
+          <button class='newuse'>Sign Up</button>
+            <!-- sign up form-->
+          <form class='signup' id='supForm'>
+            <label for='supEmail'>Email</label>
+              <input name="credentials[email]" type='email' id='supEmail' placeholder='abc@gmail.com' >
+            <label for='supPassword'>Password</label>
+              <input name="credentials[password]" type='password' id='supPassword'  placeholder='********' >
+            <label for='supConfirm'>Confirm Password</label>
+              <input name="credentials[password_confirmation]" type='password' id='supConfirm'  placeholder='********' >
+              <br>
+            <input type="submit" value='Sign Up'>
+          </form>
+          <span class='authMsg'></span>
+        </div>
+        <!-- 2nd row of container/ main content/ shows up after sign in done and row top hides-->
+        <div class = 'row main'>
+          <!-- empty div to display number of games played-->
+          <div class='overview'></div>
+          <!-- empty span to display game win/loos/tie/ div for bootstrap grid and toggle display on game end and game start-->
+          <div class='col-12 disbox'><span class='results'></span></div>
+          <!-- mid section of page/ put to style main game board and 2 sections in both sides-->
+          <div class ='row center'>
+            <!-- 1st side section of game/ user1 details (2/12) of grid row-->
+            <div class='col-2 pl1'>
+              <h4>USER - 1</h4>
+              <div class='btn'>
+                <h3>Choose:</h3>
+                <button class = 'X' id = 'X1'>X</button>
+                <button class = 'O' id = 'O1'>O</button>
+              </div>
+              <div class='pl1-show'></div>
+            </div>
+            <!-- Main game board/ 9 divs with grid postion to get game board (8/12) of grid row-->
+            <div class='col-8 gamebox'>
+              <div class=' col-4 gameboard' id='0'></div>
+              <div class='col-4 gameboard' id='1'></div>
+              <div class='col-4 gameboard' id='2'></div>
+              <div class='col-4 gameboard' id='3'></div>
+              <div class='col-4 gameboard' id='4'></div>
+              <div class='col-4 gameboard' id='5'></div>
+              <div class='col-4 gameboard' id='6'></div>
+              <div class='col-4 gameboard' id='7'></div>
+              <div class='col-4 gameboard' id='8'></div>
+            </div>
+            <!-- 2nd side section of game/ user2 details (2/12) of grid row-->
+            <div class='col-2 pl2'>
+              <h4>USER - 2</h4>
+              <div class='btn'>
+                <h3>Choose:</h3>
+                <button class = 'X' id = 'X2'>X</button>
+                <button class = 'O' id = 'O2'>O</button>
+              </div>
+              <div class='pl2-show'></div>
+            </div>
+          </div>
+          <!--button at end of gameboard to restart game-->
+          <div class='col-12 play-again'>
+            <button id='startGame'>Play Again</button>
+          </div>
+        </div>
+    </main>
+
+    <div class='modals'>
+    <!-- modal for password change/ trigger from nav bar-->
+    <div class = 'modal fade' id='cngpw'>
+     <div class='modal-dialog modal-sm modal-dialog-centered'>
+      <div class='modal-content'>
+      <div class='modal-header'>
+        <h4>Change Password</h4>
+      </div>
+      <form id='cpForm'>
+      <div class='modal-body'>
+          <label for='oldpwd'>Old Password</label>
+          <input name="passwords[old]" type='password' id = 'oldpwd' placeholder='********'>
+          <label for='newpwd'>New Password</label>
+          <input name="passwords[new]" type='password' id = 'newpwd' placeholder='********'>
+      </div>
+      <div class='modal-footer'>
+        <input class='btn btn-primary' type="submit" value='Change Passwords' data-toggle='modal' data-target='#pwMsgShow' id='submit'>
+      </div>
+        </form>
+      </div>
+      </div>
+    </div>
+    <!-- modal for password change success/fail message, trigerred from password change api results-->
+    <div class = 'modal fade' id='pwMsgShow'>
+      <div class='modal-dialog modal-sm modal-dialog-centered'>
+      <div class='modal-content'>
+        <!-- Empty div to display message after api call-->
+        <div class='modal-body' id='pwMsg'></div>
+        <div class='modal-footer'>
+          <button class='btn btn-primary' data-dismiss='modal' id='close'>Close</button>
+        </div>
+      </div>
+        </div>
+    </div>
+    <!-- modal for help content show/ trigger from nav bar-->
+    <div class = 'modal fade' id='help'>
+      <div class='modal-dialog modal-lg modal-dialog-centered' role='document'>
+        <div class='modal-content'>
+          <div class='modal-header'><h2>Rule Book</h2></div>
+          <div class='modal-body'>
+            <ul>
+              <li>The game is played on a grid that's 3 squares by 3 squares.</li>
+              <li>Choose your sign. Players take turns putting their marks in empty squares.</li>
+              <li>The first player to get 3 marks in a row (up, down, across, or diagonally) is the winner.</li>
+              <li>When all 9 squares are full, the game is over.</li>
+          </ul>
+        </div>
+        <div class='modal-footer'>
+          <button class='btn btn-primary' data-dismiss='modal' id='close'>Close</button>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal for show all game data/ trigger from nav bar-->
+    <div class = 'modal fade' id='gamedata'>
+      <div class='modal-dialog modal-lg moda-dialog-centered'>
+        <div class='modal-content'>
+          <div class='modal-header'><h2>Game History</h2></div>
+          <div class='modal-body'>
+            <div  class='game-hist'>
+            <button id='showAll'>All Games</button>
+            <button id='showFin'>Completed</button>
+            <button id='showNotFin'>Incomplete</button>
+          </div>
+          <!-- Empty article to display message after api call-->
+            <article class='history'></article>
+        </div>
+        <div class='modal-footer'>
+          <button class='del' id='del'>Delete Game</button>
+          <button class='btn btn-primary' data-dismiss='modal' id='close'>Close</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
